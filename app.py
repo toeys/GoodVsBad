@@ -1,5 +1,4 @@
 import cv2
-sift = cv2.xfeatures2d.SIFT_create()
 import numpy as np
 import streamlit as st
 import tensorflow as tf
@@ -10,7 +9,7 @@ st.title('🎈 You are Good guys or Bad guys?')
 
 model = tf.keras.models.load_model("GoodVSBad_Model.hdf5")
 
-uploaded_file = st.file_uploader("Choose a image file", type="jpg")
+uploaded_file = st.file_uploader("Choose a image file", type=['jpg', 'png', 'ipeg'])
 
 map_dict = {0: 'savory',
             1: 'unsavory'}
